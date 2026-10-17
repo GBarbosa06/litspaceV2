@@ -1,4 +1,4 @@
-package barbosa.guilherme.LitSpacev2.user.infrastucture.web;
+package barbosa.guilherme.LitSpacev2.user.infrastructure.web;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
