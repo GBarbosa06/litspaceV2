@@ -20,6 +20,11 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
+    public void delete(User user) {
+        springUserRepository.delete(user);
+    }
+
+    @Override
     public Optional<User> findById(Long id) {
         return springUserRepository.findById(id);
     }

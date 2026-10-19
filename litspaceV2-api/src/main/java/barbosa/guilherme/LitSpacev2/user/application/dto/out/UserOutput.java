@@ -1,7 +1,6 @@
-package barbosa.guilherme.LitSpacev2.user.application.dto;
+package barbosa.guilherme.LitSpacev2.user.application.dto.out;
 
 import barbosa.guilherme.LitSpacev2.user.domain.User;
-import barbosa.guilherme.LitSpacev2.user.domain.UserRole;
 
 import java.time.Instant;
 

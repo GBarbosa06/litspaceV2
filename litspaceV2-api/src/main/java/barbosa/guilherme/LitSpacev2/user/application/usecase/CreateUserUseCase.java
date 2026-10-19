@@ -2,8 +2,8 @@ package barbosa.guilherme.LitSpacev2.user.application.usecase;
 
 import barbosa.guilherme.LitSpacev2.user.application.port.PasswordHasher;
 import barbosa.guilherme.LitSpacev2.user.application.port.UserRepository;
-import barbosa.guilherme.LitSpacev2.user.application.dto.CreateUserInput;
-import barbosa.guilherme.LitSpacev2.user.application.dto.UserOutput;
+import barbosa.guilherme.LitSpacev2.user.application.dto.in.CreateUserInput;
+import barbosa.guilherme.LitSpacev2.user.application.dto.out.UserOutput;
 import barbosa.guilherme.LitSpacev2.user.domain.User;
 import barbosa.guilherme.LitSpacev2.user.domain.exceptions.UserAlreadyExistsException;
 import org.springframework.stereotype.Service;

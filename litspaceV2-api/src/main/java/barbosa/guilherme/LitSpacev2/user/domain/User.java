@@ -39,4 +39,9 @@ public class User {
     private UserRole role = UserRole.USER_ROLE;
     OffsetDateTime createdAt;
     OffsetDateTime updatedAt;
+
+    public void updatePassword(String newHashedPassword) {
+        this.password = newHashedPassword;
+        this.updatedAt = OffsetDateTime.from(Instant.now());
+    }
 }
