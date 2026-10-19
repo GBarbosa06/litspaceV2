@@ -2,6 +2,7 @@ package barbosa.guilherme.LitSpacev2.user.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +14,7 @@ import java.time.OffsetDateTime;
 @Entity
 @NoArgsConstructor
 @RequiredArgsConstructor
+@Getter
 @Table(name = "users")
 public class User {
     // implementar UserDetails quando usar security

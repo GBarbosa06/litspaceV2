@@ -1,4 +1,4 @@
-package barbosa.guilherme.LitSpacev2.user.application;
+package barbosa.guilherme.LitSpacev2.user.application.port;
 
 import barbosa.guilherme.LitSpacev2.user.domain.User;
 

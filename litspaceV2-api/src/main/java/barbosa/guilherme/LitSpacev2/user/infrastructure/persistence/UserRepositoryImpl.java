@@ -1,6 +1,6 @@
 package barbosa.guilherme.LitSpacev2.user.infrastructure.persistence;
 
-import barbosa.guilherme.LitSpacev2.user.application.UserRepository;
+import barbosa.guilherme.LitSpacev2.user.application.port.UserRepository;
 import barbosa.guilherme.LitSpacev2.user.domain.User;
 import org.springframework.stereotype.Repository;
 
