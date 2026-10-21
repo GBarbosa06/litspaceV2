@@ -1,17 +1,26 @@
 package barbosa.guilherme.LitSpacev2.user.infrastructure.web;
 
+import barbosa.guilherme.LitSpacev2.user.application.dto.out.UserOutput;
+import barbosa.guilherme.LitSpacev2.user.application.usecase.CreateUserUseCase;
+import barbosa.guilherme.LitSpacev2.user.infrastructure.web.dto.CreateUserRequest;
+import barbosa.guilherme.LitSpacev2.user.infrastructure.web.dto.UserResponse;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/users")
 public class UserController {
+    private final CreateUserUseCase createUserUseCase;
 
-    @GetMapping
-    public ResponseEntity<String> Hello(){
-        return new ResponseEntity<>("Hello, World!", HttpStatus.valueOf(200));
+    public UserController(CreateUserUseCase createUserUseCase) {
+        this.createUserUseCase = createUserUseCase;
+    }
+
+    @PostMapping
+    public ResponseEntity<UserResponse> create(@RequestBody @Valid CreateUserRequest request){
+        UserOutput output = (createUserUseCase.execute(request.toInput()));
+        return ResponseEntity.status(HttpStatus.CREATED).body(UserResponse.fromOutput(output));
     }
 }
