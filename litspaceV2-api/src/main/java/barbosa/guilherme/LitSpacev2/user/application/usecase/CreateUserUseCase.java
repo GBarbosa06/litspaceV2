@@ -27,7 +27,7 @@ public class CreateUserUseCase {
         }
 
         String hashedPassword = passwordHasher.hash(input.password());
-        User newUser = new User(input.name(), input.username(), input.email(), input.password());
+        User newUser = new User(input.name(), input.username(), input.email(), hashedPassword);
         userRepository.save(newUser);
 
         return UserOutput.fromDomain(newUser);

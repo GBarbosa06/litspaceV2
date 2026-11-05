@@ -14,6 +14,7 @@ import java.time.OffsetDateTime;
 @Entity
 @NoArgsConstructor
 @RequiredArgsConstructor
+
 @Getter
 @Table(name = "users")
 public class User {
@@ -37,11 +38,20 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private UserRole role = UserRole.USER_ROLE;
-    OffsetDateTime createdAt;
-    OffsetDateTime updatedAt;
+
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private OffsetDateTime createdAt = OffsetDateTime.now();
+
+    @Column(name = "updated_at")
+    private OffsetDateTime updatedAt = OffsetDateTime.now();
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = OffsetDateTime.now();
+    }
 
     public void updatePassword(String newHashedPassword) {
         this.password = newHashedPassword;
-        this.updatedAt = OffsetDateTime.from(Instant.now());
+        this.updatedAt = OffsetDateTime.now();
     }
 }

@@ -52,6 +52,7 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
+    // TODO: Fazer retornar uma lista de usernames compativeis
     @GetMapping("/username/{username}")
     public ResponseEntity<UserResponse> findByUsername(@PathVariable String username) {
         UserResponse response = UserResponse.fromOutput(findUserByUsernameUseCase.execute(username));

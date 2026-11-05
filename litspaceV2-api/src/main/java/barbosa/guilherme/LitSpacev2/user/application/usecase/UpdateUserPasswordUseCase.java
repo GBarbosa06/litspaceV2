@@ -21,7 +21,7 @@ public class UpdateUserPasswordUseCase {
     public void execute(UpdatePasswordInput input){
         User user = userRepository.findById(input.id()).orElseThrow(UserNotFoundException::new);
 
-        if(!passwordHasher.matches(user.getPassword(), input.newPassword())){
+        if (!passwordHasher.matches(input.currentPassword(), user.getPassword())) {
             throw new InvalidPasswordException("CURRENT PASSWORD INCORRECT");
         }
 
