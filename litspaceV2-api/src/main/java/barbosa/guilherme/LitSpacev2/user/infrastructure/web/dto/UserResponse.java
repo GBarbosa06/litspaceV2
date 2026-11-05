@@ -3,11 +3,14 @@ package barbosa.guilherme.LitSpacev2.user.infrastructure.web.dto;
 
 import barbosa.guilherme.LitSpacev2.user.application.dto.out.UserOutput;
 
+import java.time.Instant;
+
 public record UserResponse(
         Long id,
         String name,
         String email,
-        String username
+        String username,
+        Instant createdAt
 ) {
 
     public static UserResponse fromOutput(UserOutput output) {
@@ -15,7 +18,8 @@ public record UserResponse(
                 output.id(),
                 output.name(),
                 output.email(),
-                output.username()
+                output.username(),
+                output.createdAt()
         );
     }
 }

@@ -4,6 +4,7 @@ import barbosa.guilherme.LitSpacev2.user.application.port.UserRepository;
 import barbosa.guilherme.LitSpacev2.user.domain.User;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -17,6 +18,11 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public User save(User user) {
         return springUserRepository.save(user);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return springUserRepository.findAll();
     }
 
     @Override

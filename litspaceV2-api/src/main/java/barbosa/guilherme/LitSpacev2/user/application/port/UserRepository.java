@@ -1,11 +1,14 @@
 package barbosa.guilherme.LitSpacev2.user.application.port;
 
+import barbosa.guilherme.LitSpacev2.user.application.dto.out.UserOutput;
 import barbosa.guilherme.LitSpacev2.user.domain.User;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface UserRepository {
     User save(User user);
+    List<User> findAll();
     void delete(User user);
     Optional<User> findById(Long id);
     Optional<User> findByEmail(String email);
